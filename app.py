@@ -2,16 +2,19 @@
 from flask import Flask, render_template, request
 import pickle, gzip, helper
 import numpy as np
+from flask_cors import cross_origin
 
 with gzip.open("model.pickle.gz" , "rb") as f:
     classifier = pickle.load(f)
 app = Flask(__name__)
 
 @app.route('/')
+@cross_origin()
 def home():
 	return render_template('index.html')
 
 @app.route('/predict_duplicates', methods=['POST'])
+@cross_origin()
 def predict_duplicates():
     if request.method == 'POST':
         if request.json is not None:
