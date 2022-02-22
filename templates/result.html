@@ -25,11 +25,11 @@
 		<div class="results">
 			{% if prediction==1 %}
 				<h1>Prediction: <span class='danger'>Duplicate</span></h1>
-				<h3>Probabilities: <span class='danger'>Duplicated = {{probability_not_duplicate}}% || Not Duplicated = {{100-probability_not_duplicate}}%</span></h3>
+				<h3>Probabilities: <span class='danger'>Duplicated = {{100-probability_not_duplicate}}% || Not Duplicated = {{probability_not_duplicate}}%</span></h3>
 				<img class="gif" src="{{ url_for('static', filename='duplicate.gif') }}" alt="Duplicate">
 			{% elif prediction==0 %}
 				<h1>Prediction: <span class='safe'>Not Duplicate</span></h1>
-				<h3>Probabilities: <span class='danger'>Duplicated = {{probability_not_duplicate}}% || Not Duplicated = {{100-probability_not_duplicate}}%</span></h3>
+				<h3>Probabilities: <span class='danger'>Duplicated = {{100-probability_not_duplicate}}% || Not Duplicated = {{probability_not_duplicate}}%</span></h3>
 				<img class="gif1" src="{{ url_for('static', filename='not_duplicate.gif') }}" alt="Not Duplicate">
 			{% endif %}
 		</div>
