@@ -39,4 +39,4 @@ def predict_duplicates():
             return render_template('result.html', prediction=prediction, probability_not_duplicate = probability_not_duplicate)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=False)
